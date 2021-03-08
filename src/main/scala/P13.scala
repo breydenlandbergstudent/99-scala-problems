@@ -25,7 +25,7 @@ object P13 extends App {
         innerPack (List (), list)
     }
 
-    def encode (list : List[List[Any]]): Option[List[(Int, Any)]] = {
+    def encode (list : List[List[Any]]) : Option[List[(Int, Any)]] = {
         @tailrec
         def innerEncode (encoded : List[(Int, Any)], innerList : List[List[Any]]) : Option[List[(Int, Any)]] = {
             innerList match {
