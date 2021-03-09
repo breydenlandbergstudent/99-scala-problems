@@ -15,7 +15,7 @@ object P17 extends App {
         Some (list splitAt K)
     }
 
-    // uses an inner counter mechanism (not very idiomatic)
+    // uses an inner counter mechanism (not very idiomatic) <- is being "not very idiomatic" the only reason it's not the optimal solution?
     def splitOriginal (K : Int, list : List[Any]) : Option[(List[Any], List[Any])] = {
         @tailrec
         def innerSplit (split : (List[Any], List[Any]), innerK : Int, innerList : List[Any]) : Option[(List[Any], List[Any])] = {
@@ -28,15 +28,23 @@ object P17 extends App {
         innerSplit ((List (), List ()), K, list)
     }
 
-    // not finished
-    // TODO
-    def split (K : Int, list : List[Any]) : Option[(List[Any], List[Any])] = {
-        ???
+    def split (K : Int, list : List[Any]) : Option[List[List[Any]]] = {
+        @tailrec
+        def innerSplit (split : List[List[Any]], innerList : List[Any]) : Option[List[List[Any]]] = {
+            innerList match {
+                case Nil => Some (split)
+                case hd :: tl if split.isEmpty || list.length - innerList.length == K => innerSplit (split ::: List (List (hd)), tl)
+                case hd :: tl => innerSplit (split.init ::: List (split.last ::: List (hd)), tl)
+            }
+        }
+        innerSplit (List (), list)
     }
 
     println ("P17 solution using inbuilt collection API method given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + splitInbuilt (3, List (0, 1, 2, 3, 4, 5)))
     println ("P17 original solution given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + splitOriginal (3, List (0, 1, 2, 3, 4, 5)))
     println ("P17 solution given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + split (3, List (0, 1, 2, 3, 4, 5)))
+    println ("P17 solution given K = 3, list = List (0, 1, 2, 3, 4, 5, 6, 7)) is:   " + split (3, List (0, 1, 2, 3, 4, 5, 6, 7)))
+    println ("P17 solution given K = 5, list = List (0, 1, 2, 3, 4, 5, 6, 7)) is:   " + split (5, List (0, 1, 2, 3, 4, 5, 6, 7)))
     println ("P17 solution using inbuilt collection API method given K = 3, list = List ()) is:   " + splitInbuilt (3, List ()))
     println ("P17 original solution given K = 3, list = List ()) is:   " + splitOriginal (3, List ()))
     println ("P17 solution given K = 3, list = List ()) is:   " + split (3, List ()))
