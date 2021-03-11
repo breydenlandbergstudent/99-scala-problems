@@ -15,7 +15,7 @@ object P17 extends App {
         Some (list splitAt K)
     }
 
-    // uses an inner counter mechanism (not very idiomatic) <- is being "not very idiomatic" the only reason it's not the optimal solution?
+    // uses an inner counter mechanism (not very idiomatic)
     def splitOriginal (K : Int, list : List[Any]) : Option[(List[Any], List[Any])] = {
         @tailrec
         def innerSplit (split : (List[Any], List[Any]), innerK : Int, innerList : List[Any]) : Option[(List[Any], List[Any])] = {
@@ -28,16 +28,17 @@ object P17 extends App {
         innerSplit ((List (), List ()), K, list)
     }
 
-    def split (K : Int, list : List[Any]) : Option[List[List[Any]]] = {
+    // you were close actually; just remember you don't need an "inner counter" mechanism for this sort of problem.
+    def split (K : Int, list : List[Any]) : Option[(List[Any], List[Any])] = {
         @tailrec
-        def innerSplit (split : List[List[Any]], innerList : List[Any]) : Option[List[List[Any]]] = {
+        def innerSplit (split : (List[Any], List[Any]), innerList : List[Any]) : Option[(List[Any], List[Any])] = {
             innerList match {
                 case Nil => Some (split)
-                case hd :: tl if split.isEmpty || list.length - innerList.length == K => innerSplit (split ::: List (List (hd)), tl)
-                case hd :: tl => innerSplit (split.init ::: List (split.last ::: List (hd)), tl)
+                case hd :: tl if list.length - innerList.length < K => innerSplit ((split._1 ::: List (hd), split._2), tl)
+                case hd :: tl => innerSplit ((split._1, split._2 ::: List (hd)), tl)
             }
         }
-        innerSplit (List (), list)
+        innerSplit ((List (), List ()), list)
     }
 
     println ("P17 solution using inbuilt collection API method given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + splitInbuilt (3, List (0, 1, 2, 3, 4, 5)))

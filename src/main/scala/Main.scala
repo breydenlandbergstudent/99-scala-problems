@@ -29,11 +29,10 @@ object Main extends App {
     println
     P15 main null
     println
-    // below here not implemented properly yet
-//    P16 main null
-//    println
-//    P17 main null
-//    println
+    P16 main null
+    println
+    P17 main null
+    println
 //    P18 main null
 //    println
 //    P19 main null
