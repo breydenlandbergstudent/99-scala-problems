@@ -37,10 +37,10 @@ object Main extends App {
     println
 //    P19 main null
 //    println
-//    P20 main null
-//    println
-//    P21 main null
-//    println
+    P20 main null
+    println
+    P21 main null
+    println
 //    P22 main null
 //    println
 //    P23 main null
