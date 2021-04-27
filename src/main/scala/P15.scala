@@ -34,8 +34,8 @@ object P15 extends App {
         innerDuplicateN (List (), list)
     }
 
-    println ("P15 original solution given N = 5, List (a, b, c, d, e, f)) is:   " + P15.duplicateNOriginal (5, List ('a', 'b', 'c', 'd', 'e', 'f')))
-    println ("P15 solution given N = 5, List (a, b, c, d, e, f)) is:   " + P15.duplicateN (5, List ('a', 'b', 'c', 'd', 'e', 'f')))
-    println ("P15 original solution given N = 5, List ()) is:   " + P15.duplicateNOriginal (5, List ()))
-    println ("P15 solution given N = 5, List ()) is:   " + P15.duplicateN (5, List ()))
+    println ("P15 original solution given N = 5, List (a, b, c, d, e, f) is:   " + P15.duplicateNOriginal (5, List ('a', 'b', 'c', 'd', 'e', 'f')))
+    println ("P15 solution given N = 5, List (a, b, c, d, e, f) is:   " + P15.duplicateN (5, List ('a', 'b', 'c', 'd', 'e', 'f')))
+    println ("P15 original solution given N = 5, List () is:   " + P15.duplicateNOriginal (5, List ()))
+    println ("P15 solution given N = 5, List () is:   " + P15.duplicateN (5, List ()))
 }

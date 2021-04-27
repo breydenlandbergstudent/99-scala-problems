@@ -41,12 +41,12 @@ object P17 extends App {
         innerSplit ((List (), List ()), list)
     }
 
-    println ("P17 solution using inbuilt collection API method given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + splitInbuilt (3, List (0, 1, 2, 3, 4, 5)))
-    println ("P17 original solution given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + splitOriginal (3, List (0, 1, 2, 3, 4, 5)))
-    println ("P17 solution given K = 3, list = List (0, 1, 2, 3, 4, 5)) is:   " + split (3, List (0, 1, 2, 3, 4, 5)))
-    println ("P17 solution given K = 3, list = List (0, 1, 2, 3, 4, 5, 6, 7)) is:   " + split (3, List (0, 1, 2, 3, 4, 5, 6, 7)))
-    println ("P17 solution given K = 5, list = List (0, 1, 2, 3, 4, 5, 6, 7)) is:   " + split (5, List (0, 1, 2, 3, 4, 5, 6, 7)))
-    println ("P17 solution using inbuilt collection API method given K = 3, list = List ()) is:   " + splitInbuilt (3, List ()))
-    println ("P17 original solution given K = 3, list = List ()) is:   " + splitOriginal (3, List ()))
-    println ("P17 solution given K = 3, list = List ()) is:   " + split (3, List ()))
+    println ("P17 solution using inbuilt collection API method given K = 3, list = List (0, 1, 2, 3, 4, 5) is:   " + splitInbuilt (3, List (0, 1, 2, 3, 4, 5)))
+    println ("P17 original solution given K = 3, list = List (0, 1, 2, 3, 4, 5) is:   " + splitOriginal (3, List (0, 1, 2, 3, 4, 5)))
+    println ("P17 solution given K = 3, list = List (0, 1, 2, 3, 4, 5) is:   " + split (3, List (0, 1, 2, 3, 4, 5)))
+    println ("P17 solution given K = 3, list = List (0, 1, 2, 3, 4, 5, 6, 7) is:   " + split (3, List (0, 1, 2, 3, 4, 5, 6, 7)))
+    println ("P17 solution given K = 5, list = List (0, 1, 2, 3, 4, 5, 6, 7) is:   " + split (5, List (0, 1, 2, 3, 4, 5, 6, 7)))
+    println ("P17 solution using inbuilt collection API method given K = 3, list = List () is:   " + splitInbuilt (3, List ()))
+    println ("P17 original solution given K = 3, list = List () is:   " + splitOriginal (3, List ()))
+    println ("P17 solution given K = 3, list = List () is:   " + split (3, List ()))
 }

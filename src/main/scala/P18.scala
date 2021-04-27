@@ -43,11 +43,11 @@ object P18 extends App {
         innerSlice (List (), list)
     }
 
-    println ("P18 solution using inbuilt collection API method given K = 2, L = 4, list = List (0, 1, 2, 3, 4, 5)) is:   " + sliceInbuilt (2, 4, List (0, 1, 2, 3, 4, 5)))
-    println ("P18 original solution given K = 2, L = 4, list = List (0, 1, 2, 3, 4, 5)) is:   " + sliceOriginal (2, 4, List (0, 1, 2, 3, 4, 5)))
-    println ("P18 original solution given K = 5, L = 11, list = List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)) is:   " + sliceOriginal (5, 11, List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)))
-    println ("P18 solution given K = 2, L = 4, list = List (0, 1, 2, 3, 4, 5)) is:   " + slice (2, 4, List (0, 1, 2, 3, 4, 5)))
-    println ("P18 solution given K = 5, L = 11, list = List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)) is:   " + slice (5, 11, List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)))
-    println ("P18 solution using inbuilt collection API method given K = 2, L = 4, list = List ()) is:   " + sliceInbuilt (2, 4, List ()))
-    println ("P18 original solution given K = 2, L = 4, list = List ()) is:   " + sliceOriginal (2, 4, List ()))
+    println ("P18 solution using inbuilt collection API method given K = 2, L = 4, list = List (0, 1, 2, 3, 4, 5) is:   " + sliceInbuilt (2, 4, List (0, 1, 2, 3, 4, 5)))
+    println ("P18 original solution given K = 2, L = 4, list = List (0, 1, 2, 3, 4, 5) is:   " + sliceOriginal (2, 4, List (0, 1, 2, 3, 4, 5)))
+    println ("P18 original solution given K = 5, L = 11, list = List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) is:   " + sliceOriginal (5, 11, List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)))
+    println ("P18 solution given K = 2, L = 4, list = List (0, 1, 2, 3, 4, 5) is:   " + slice (2, 4, List (0, 1, 2, 3, 4, 5)))
+    println ("P18 solution given K = 5, L = 11, list = List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) is:   " + slice (5, 11, List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)))
+    println ("P18 solution using inbuilt collection API method given K = 2, L = 4, list = List () is:   " + sliceInbuilt (2, 4, List ()))
+    println ("P18 original solution given K = 2, L = 4, list = List () is:   " + sliceOriginal (2, 4, List ()))
 }

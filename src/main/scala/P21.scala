@@ -22,7 +22,7 @@ object P21 extends App {
         innerInsert (List (), list)
     }
 
-    println ("P21 solution given item = \"inserted\", K = 4, list = List (0, 1, 2, 3, 4, 5)) is:   " + insertAt ("inserted", 4, List (0, 1, 2, 3, 4, 5)))
-    println ("P21 solution given item = \"inserted\", K = 7, list = List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) is:   " + insertAt ("inserted", 7, List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)))
-    println ("P21 solution given item = \"inserted\", K = 4, list = List ()) is:   " + insertAt ("inserted", 4, List ()))
+    println ("P21 solution given item = \"inserted\", K = 4, list = List (0, 1, 2, 3, 4, 5) is:   " + insertAt ("inserted", 4, List (0, 1, 2, 3, 4, 5)))
+    println ("P21 solution given item = \"inserted\", K = 7, list = List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13) is:   " + insertAt ("inserted", 7, List (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)))
+    println ("P21 solution given item = \"inserted\", K = 4, list = List () is:   " + insertAt ("inserted", 4, List ()))
 }
