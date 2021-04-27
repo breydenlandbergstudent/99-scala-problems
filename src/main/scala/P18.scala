@@ -14,7 +14,7 @@ import scala.annotation.tailrec
 
 object P18 extends App {
     def sliceInbuilt (K : Int, L : Int, list : List[Any]) : Option[List[Any]] = {
-        Some (list slice (K, L))
+        Some (list.slice (K, L))
     }
 
     // uses an inner counter mechanism (not an optimal solution)

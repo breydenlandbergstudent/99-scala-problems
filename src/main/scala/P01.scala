@@ -10,12 +10,12 @@ import scala.annotation.tailrec
 // res0: Int = 8
 
 object P01 extends App {
-    def lastInbuilt (list : List[Any]) : Option[Any] = {
+    def lastInbuilt[A] (list : List[A]) : Option[A] = {
         list lastOption
     }
 
     @tailrec
-    def last (list : List[Any]) : Option[Any] = {
+    def last[A] (list : List[A]) : Option[A] = {
         list match {
             case Nil => None
             case hd :: Nil => Some (hd)
