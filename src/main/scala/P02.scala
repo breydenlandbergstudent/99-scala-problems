@@ -10,13 +10,13 @@ import scala.annotation.tailrec
 // res0: Int = 5
 
 object P02 extends App {
-    def penultimateInbuilt (list : List[Any]) : Option[Any] = {
+    def penultimateInbuilt[A] (list : List[A]) : Option[A] = {
         if (list.length > 1) Some (list.init.last)
         else None
     }
 
     @tailrec
-    def penultimate (list : List[Any]) : Option[Any] = {
+    def penultimate[A] (list : List[A]) : Option[A] = {
         list match {
             case Nil | _ :: Nil => None
             case hd :: _ :: Nil => Some (hd)

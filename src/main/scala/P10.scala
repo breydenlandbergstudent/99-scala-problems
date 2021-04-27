@@ -13,10 +13,10 @@ import scala.annotation.tailrec
 // res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
 
 object P10 extends App{
-    def encode (list : List[Any]) : Option[List[(Int, Any)]] = {
+    def encode[A] (list : List[A]) : Option[List[(Int, A)]] = {
         val packedList = pack (list) get
         @tailrec
-        def innerEncode (encoded : List[(Int, Any)], innerList : List[List[Any]]) : Option[List[(Int, Any)]] = {
+        def innerEncode[B] (encoded : List[(Int, B)], innerList : List[List[B]]) : Option[List[(Int, B)]] = {
             innerList match {
                 case Nil => Some (encoded)
                 case hd :: tl => innerEncode (encoded ::: List ((hd.length, hd.head)), tl)

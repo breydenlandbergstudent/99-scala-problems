@@ -8,6 +8,10 @@
 // res0: Int = 6
 
 object P04 extends App {
+    def lengthInbuilt (list : List[Any]) : Int = {
+        list length
+    }
+
     def length (list : List[Any]) : Int = {
         list match {
             case Nil => 0
@@ -16,6 +20,8 @@ object P04 extends App {
         }
     }
 
+    println ("P04 inbuilt solution given list = List (0, 1, 2, 3, 4, 5) is:   " + length (List (0, 1, 2, 3, 4, 5)))
+    println ("P04 inbuilt solution given list = List () is:   " + length (List ()))
     println ("P04 solution given list = List (0, 1, 2, 3, 4, 5) is:   " + length (List (0, 1, 2, 3, 4, 5)))
     println ("P04 solution given list = List () is:   " + length (List ()))
 }

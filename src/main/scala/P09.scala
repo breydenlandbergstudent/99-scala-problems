@@ -11,9 +11,9 @@ import scala.annotation.tailrec
 // res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
 
 object P09 extends App {
-    def pack (list : List[Any]) : Option[List[List[Any]]] = {
+    def pack[A] (list : List[A]) : Option[List[List[A]]] = {
         @tailrec
-        def innerPack (packed : List[List[Any]], innerList : List[Any]) : Option[List[List[Any]]] = {
+        def innerPack[B] (packed : List[List[B]], innerList : List[B]) : Option[List[List[B]]] = {
             innerList match {
                 case Nil => Some (packed)
                 case hd :: tl if packed.nonEmpty && hd == packed.last.head => innerPack (packed.init ::: List (packed.last ::: List (hd)), tl)

@@ -8,11 +8,11 @@
 // res0: List[Any] = List(1, 1, 2, 3, 5, 8)
 
 object P07 extends App {
-    def flatten (list : List[Any]) : List[Any] = {
+    def flatten[A] (list : List[A]) : List[A] = {
         list match {
             case Nil => Nil
-            case (hd : List[Any]) :: tl => flatten (hd) ::: flatten (tl)
-            case (hd : Any) :: tl => hd :: flatten (tl)
+            case (hd : List[A]) :: tl => flatten (hd) ::: flatten (tl)
+            case (hd : A) :: tl => hd :: flatten (tl)
         }
     }
 

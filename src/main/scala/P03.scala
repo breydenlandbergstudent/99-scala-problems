@@ -11,7 +11,7 @@ import scala.annotation.tailrec
 
 object P03 extends App {
     @tailrec
-    def findElementAt (K : Int, list : List[Any]) : Option[Any] =
+    def findElementAt[A] (K : Int, list : List[A]) : Option[A] =
         (K, list) match {
             case (_, Nil) => None
             case (0, hd :: _) => Some (hd)

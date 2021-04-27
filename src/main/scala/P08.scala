@@ -10,7 +10,7 @@
 // res0: List[Symbol] = List('a, 'b, 'c, 'a, 'd, 'e)
 
 object P08 extends App {
-    def compress (list : List[Any]) : List[Any] = {
+    def compress[A] (list : List[A]) : List[A] = {
         list match {
             case Nil => Nil
             case hd :: Nil => List (hd)

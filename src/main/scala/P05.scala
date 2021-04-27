@@ -8,7 +8,7 @@
 // res0: List[Int] = List(8, 5, 3, 2, 1, 1)
 
 object P05 extends App {
-    def reverse (list : List[Any]) : List[Any] = {
+    def reverse[A] (list : List[A]) : List[A] = {
         list match {
             case Nil => Nil
             case hd :: Nil => List (hd)
