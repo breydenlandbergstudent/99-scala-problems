@@ -11,21 +11,21 @@ import scala.annotation.tailrec
 // res0: List[Symbol] = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
 
 object P12 extends App {
-    def decodeOriginal (list : List[(Int, Any)]) : Option[List[Any]] = {
+    def decodeOriginal[_] (list : List[(Int, _)]) : Option[List[_]] = {
         @tailrec
-        def innerDecode (decoded : List[Any], innerList : List[(Int, Any)]) : Option[List[Any]] = {
+        def innerDecode[A] (decoded : List[A], innerList : List[(Int, A)]) : Option[List[A]] = {
             innerList match {
                 case Nil => Some (decoded)
-                case hd :: tl if hd._1 == 1 => innerDecode (decoded ::: List (hd._2), tl)
-                case hd :: tl => innerDecode (decoded ::: List (hd._2), List ((hd._1 - 1, hd._2)) ::: tl)
+                case hd :: tl if hd._1 == 1 => innerDecode (decoded :+ hd._2, tl)
+                case hd :: tl => innerDecode (decoded :+ hd._2, (hd._1 - 1, hd._2) +: tl)
             }
         }
         innerDecode (List (), list)
     }
 
-    def decode (list : List[(Int, Any)]) : Option[List[Any]] = {
+    def decode[_] (list : List[(Int, _)]) : Option[List[_]] = {
         @tailrec
-        def innerDecode (decoded : List[Any], innerList : List[(Int, Any)]) : Option[List[Any]] = {
+        def innerDecode[A] (decoded : List[A], innerList : List[(Int, A)]) : Option[List[A]] = {
             innerList match {
                 case Nil => Some (decoded)
                 case hd :: tl => innerDecode (decoded ::: List.fill (hd._1) (hd._2), tl)
@@ -34,10 +34,15 @@ object P12 extends App {
         innerDecode (List (), list)
     }
 
-    println ("P12 original solution given List ('a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'd', 'f', 'd', 'd') is:   "
-        + decodeOriginal (List((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (1, 'f'), (1, 'd'), (1, 'f'), (2, 'd'))))
-    println ("P12 solution given List ('a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'd', 'f', 'd', 'd') is:   "
-        + decode (List((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (1, 'f'), (1, 'd'), (1, 'f'), (2, 'd'))))
-    println ("P12 original solution given List () is:   " + decodeOriginal (List()))
-    println ("P12 solution given List () is:   " + decode (List()))
+    println ("P12 original solution given List ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (1, 'f'), (1, 'd'), (1, 'f'), (2, 'd')) is:   "
+        + decodeOriginal (List ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (1, 'f'), (1, 'd'), (1, 'f'), (2, 'd'))))
+    println ("P12 original solution given List () is:   " + decodeOriginal (List ()))
+
+    println
+
+    println ("P12 solution given List ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (1, 'f'), (1, 'd'), (1, 'f'), (2, 'd')) is:   "
+        + decode (List ((1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (1, 'f'), (1, 'd'), (1, 'f'), (2, 'd'))))
+    println ("P12 solution given List () is:   " + decode (List ()))
+
+    println
 }

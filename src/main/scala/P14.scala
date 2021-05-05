@@ -10,7 +10,7 @@ import scala.annotation.tailrec
 // res0: List[Symbol] = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd)
 
 object P14 extends App {
-    def duplicateOriginal (list : List[Any]) : List[Any] = {
+    def duplicateOriginal[A] (list : List[A]) : List[A] = {
         list match {
             case Nil => Nil
             case hd :: Nil => List (hd, hd)
@@ -18,9 +18,9 @@ object P14 extends App {
         }
     }
 
-    def duplicate (list : List[Any]) : Option[List[Any]] = {
+    def duplicate[_] (list : List[_]) : Option[List[_]] = {
         @tailrec
-        def innerDuplicate (duplicated : List[Any], innerList : List[Any]) : Option[List[Any]] = {
+        def innerDuplicate[A] (duplicated : List[A], innerList : List[A]) : Option[List[A]] = {
             innerList match {
                 case Nil => Some (duplicated)
                 case hd :: tl => innerDuplicate (duplicated ::: List.fill (2) (hd), tl)
@@ -30,7 +30,12 @@ object P14 extends App {
     }
 
     println ("P14 original solution given List ('a', 'b', 'c', 'd', 'e', 'f') is:   " + duplicateOriginal (List ('a', 'b', 'c', 'd', 'e', 'f')))
-    println ("P14 solution given List ('a', 'b', 'c', 'd', 'e', 'f') is:   " + duplicateOriginal (List ('a', 'b', 'c', 'd', 'e', 'f')))
-    println ("P14 original solution given List () is:   " + duplicate (List ()))
     println ("P14 solution given List () is:   " + duplicateOriginal (List ()))
+
+    println
+
+    println ("P14 solution given List ('a', 'b', 'c', 'd', 'e', 'f') is:   " + duplicate (List ('a', 'b', 'c', 'd', 'e', 'f')))
+    println ("P14 original solution given List () is:   " + duplicate (List ()))
+
+    println
 }
