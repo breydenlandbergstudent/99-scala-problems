@@ -15,7 +15,7 @@ object P08 extends App {
             case Nil => Nil
             case hd :: Nil => List (hd)
             case hd :: tl if hd == tl.head => compress (tl)
-            case hd :: tl => List (hd) ::: compress (tl)
+            case hd :: tl => hd +: compress (tl)
         }
     }
 

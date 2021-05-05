@@ -11,13 +11,13 @@ import scala.annotation.tailrec
 // res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
 
 object P09 extends App {
-    def pack[A] (list : List[A]) : Option[List[List[A]]] = {
+    def pack[_] (list : List[_]) : Option[List[List[_]]] = {
         @tailrec
-        def innerPack[B] (packed : List[List[B]], innerList : List[B]) : Option[List[List[B]]] = {
+        def innerPack[A] (packed : List[List[A]], innerList : List[A]) : Option[List[List[A]]] = {
             innerList match {
                 case Nil => Some (packed)
-                case hd :: tl if packed.nonEmpty && hd == packed.last.head => innerPack (packed.init ::: List (packed.last ::: List (hd)), tl)
-                case hd :: tl => innerPack (packed ::: List (List (hd)), tl)
+                case hd :: tl if packed.nonEmpty && hd == packed.last.head => innerPack (packed.init :+ (packed.last :+ hd), tl)
+                case hd :: tl => innerPack (packed :+ List (hd), tl)
             }
         }
         innerPack (List (), list)

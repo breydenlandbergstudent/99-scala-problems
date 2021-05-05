@@ -12,7 +12,7 @@ object P05 extends App {
         list match {
             case Nil => Nil
             case hd :: Nil => List (hd)
-            case hd :: tl => reverse (tl) ::: List (hd)
+            case hd :: tl => reverse (tl) :+ hd
         }
     }
 
