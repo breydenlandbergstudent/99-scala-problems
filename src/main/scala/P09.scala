@@ -26,4 +26,6 @@ object P09 extends App {
     println ("P09 solution given List ('a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'd', 'f', 'd', 'd') is:   "
         + P09.pack (List ('a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'd', 'f', 'd', 'd')))
     println ("P09 solution given List () is:   " + P09.pack (List ()))
+
+    println
 }

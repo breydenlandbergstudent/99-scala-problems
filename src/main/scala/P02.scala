@@ -25,9 +25,14 @@ object P02 extends App {
     }
 
     println ("P02 solution using inbuilt collection API given list = List (0, 1, 2, 3, 4, 5) is:   " + P02.penultimateInbuilt (List (0, 1, 2, 3, 4, 5)))
-    println ("P02 solution given list = List (0, 1, 2, 3, 4, 5) is:   " + P02.penultimate (List (0, 1, 2, 3, 4, 5)))
     println ("P02 solution using inbuilt collection API given list = List (0) is:   " + P02.penultimateInbuilt (List (0)))
-    println ("P02 solution given list = List (0) is:   " + P02.penultimate (List (0)))
     println ("P02 solution using inbuilt collection API given list = List () is:   " + P02.penultimateInbuilt (List ()))
+
+    println
+
+    println ("P02 solution given list = List (0, 1, 2, 3, 4, 5) is:   " + P02.penultimate (List (0, 1, 2, 3, 4, 5)))
+    println ("P02 solution given list = List (0) is:   " + P02.penultimate (List (0)))
     println ("P02 solution given list = List () is:   " + P02.penultimate (List ()))
+
+    println
 }

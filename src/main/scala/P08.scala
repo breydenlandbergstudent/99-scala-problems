@@ -22,4 +22,6 @@ object P08 extends App {
     println ("P08 solution given list = List ('a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e') is:   "
         + compress (List ('a', 'b', 'b', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e')))
     println ("P08 solution given list = List () is:   " + compress (List ()))
+
+    println
 }

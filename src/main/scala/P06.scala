@@ -35,8 +35,16 @@ object P06 extends App {
 
     println ("P06 solution using P05.reverse given list = List (0, 1, 2, 3, 4, 5)) is:   " + isPalindromeReverse (List (0, 1, 2, 3, 4, 5)))
     println ("P06 solution using P05.reverse given list = List (0, 1, 2, 3, 2, 1, 0)) is:   " + isPalindromeReverse (List (0, 1, 2, 3, 2, 1, 0)))
+
+    println
+
     println ("P06 original solution given list = List (0, 1, 2, 3, 4, 5)) is:   " + isPalindromeOriginal (List (0, 1, 2, 3, 4, 5)))
     println ("P06 original solution given list = List (0, 1, 2, 3, 2, 1, 0)) is:   " + isPalindromeOriginal (List (0, 1, 2, 3, 2, 1, 0)))
+
+    println
+
     println ("P06 solution given list = List (0, 1, 2, 3, 4, 5)) is:   " + isPalindrome (List (0, 1, 2, 3, 4, 5)))
     println ("P06 solution given list = List (0, 1, 2, 3, 2, 1, 0)) is:   " + isPalindrome (List (0, 1, 2, 3, 2, 1, 0)))
+
+    println
 }

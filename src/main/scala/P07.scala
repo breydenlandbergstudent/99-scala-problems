@@ -18,4 +18,6 @@ object P07 extends App {
 
     println ("P07 solution given list = List (List (0, 1, 2, 3), 0, 1, 2, 3, List (4, List (5, List (6)))) is:   " + flatten (List (List (0, 1, 2, 3), 0, 1, 2, 3, List (4, List (5, List (6))))))
     println ("P07 solution given list = List () is:   " + flatten (List ()))
+
+    println
 }

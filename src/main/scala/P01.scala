@@ -24,7 +24,12 @@ object P01 extends App {
     }
 
     println ("P01 solution using inbuilt collection method given list = List (0, 1, 2, 3, 4, 5) is:   " + lastInbuilt (List (0, 1, 2, 3, 4, 5)))
-    println ("P01 solution given list = List (0, 1, 2, 3, 4, 5) is:   " + last (List (0, 1, 2, 3, 4, 5)))
     println ("P01 solution using inbuilt collection method given list = List () is:   " + lastInbuilt (List ()))
+
+    println
+
+    println ("P01 solution given list = List (0, 1, 2, 3, 4, 5) is:   " + last (List (0, 1, 2, 3, 4, 5)))
     println ("P01 solution given list = List () is:   " + last (List ()))
+
+    println
 }

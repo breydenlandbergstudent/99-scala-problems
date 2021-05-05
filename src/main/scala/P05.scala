@@ -18,4 +18,6 @@ object P05 extends App {
 
     println ("P05 solution given list = List (0, 1, 2, 3, 4, 5) is:   " + reverse (List (0, 1, 2, 3, 4, 5)))
     println ("P05 solution given list = List () is:   " + reverse (List ()))
+
+    println
 }

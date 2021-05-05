@@ -20,4 +20,6 @@ object P03 extends App {
 
     println ("P03 solution given K = 3, list = List (0, 1, 2, 3, 4, 5) is:   " + findElementAt (3, List (0, 1, 2, 3, 4, 5)))
     println ("P03 solution given K = 3, list = List () is:   " + findElementAt (3, List ()))
+
+    println
 }
