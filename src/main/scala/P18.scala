@@ -46,17 +46,15 @@ object P18 extends App {
     // an alternative solution...
     def sliceAlternative[_] (K : Int, L : Int, list : List[_]): Option[List[_]] = {
         @tailrec
-        def innerSlice[A] (idx : Int, unsliced : List[A], sliced : List[A]) : Option[List[A]] = {
+        def innerSlice[A] (idx : Int, sliced : List[A], unsliced : List[A]) : Option[List[A]] = {
             unsliced match {
                 case Nil => Some (sliced)
                 case hd :: tl =>
                     if (idx >= K && idx < L) {
-                        val newSliced = sliced :+ hd
-                        val newIdx = idx + 1
-                        innerSlice (newIdx, tl, newSliced)
+                        innerSlice (idx + 1, sliced :+ hd, tl)
                     }
                     else {
-                        innerSlice (idx + 1, tl, sliced)
+                        innerSlice (idx + 1, sliced, tl)
                     }
             }
         }
@@ -64,7 +62,7 @@ object P18 extends App {
             Some (List ())
         }
         else {
-            innerSlice(0, list, List())
+            innerSlice(0, List (), list)
         }
     }
 
