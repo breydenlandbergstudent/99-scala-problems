@@ -13,10 +13,10 @@ import scala.annotation.tailrec
 // res0: List[Any] = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
 
 object P11 extends App {
-    def encodeModified (list : List[Any]) : Option[List[Any]] = {
+    def encodeModified[_] (list : List[_]) : Option[List[_]] = {
         val packedList = pack (list) get
         @tailrec
-        def innerEncodeModified (encoded : List[Any], innerList : List[List[Any]]) : Option[List[Any]] = {
+        def innerEncodeModified[A] (encoded : List[A], innerList : List[List[A]]) : Option[List[Any]] = {
             innerList match {
                 case Nil => Some (encoded)
                 case hd :: tl if hd.length == 1 => innerEncodeModified (encoded :+ hd.head, tl)

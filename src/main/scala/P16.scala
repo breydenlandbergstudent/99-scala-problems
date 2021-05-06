@@ -23,15 +23,36 @@ object P16 extends App {
     }
 
     def dropNAlternative[_] (N : Int, list : List[_]) : Option[List[_]] = {
-        def innerDropN[A] () : Option[List[A]] = {
-            ???
+        @tailrec
+        def innerDropN[A] (idx : Int, dropped : List[A], undropped : List[A]) : Option[List[A]] = {
+            undropped match {
+                case Nil => Some (dropped)
+                case hd :: tl => {
+                    if (idx % N == 0) {
+                        innerDropN (idx + 1, dropped, tl)
+                    }
+                    else {
+                        innerDropN (idx + 1, dropped :+ hd, tl)
+                    }
+                }
+            }
         }
-        innerDropN
+        innerDropN (1, List (), list)
     }
 
-    println ("P16 solution given List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f') is:   "
+    println ("P16 solution given N = 3, list = List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f') is:   "
         + dropN (3, List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f')))
-    println ("P16 solution given List () is:   " + dropN (3, List ()))
+    println ("P16 solution given N = -3, list = List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f') is:   "
+        + dropNAlternative (-3, List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f')))
+    println ("P16 solution given N = 3, list = List () is:   " + dropN (3, List ()))
+
+    println
+
+    println ("P16 alternative solution given N = 3, list = List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f') is:   "
+        + dropNAlternative (3, List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f')))
+    println ("P16 alternative solution given N = -3, list = List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f') is:   "
+        + dropNAlternative (-3, List ('a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'e', 'e', 'e', 'e', 'e', 'f', 'f', 'f', 'f', 'f')))
+    println ("P16 alternative solution given N = 3, list = List () is:   " + dropNAlternative (3, List ()))
 
     println
 }
